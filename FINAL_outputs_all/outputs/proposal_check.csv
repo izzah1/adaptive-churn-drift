@@ -1,0 +1,19 @@
+item,proposal,code,match
+raw rows,1067371,1067371,✅
+missing customer ID excluded,243007,243007,✅
+remaining identified rows,824364,824364,✅
+after keeping valid purchases,805549,805549,✅
+after removing exact duplicates,779425,779425,✅
+distinct customers,5878,5878,✅
+distinct invoices,36969,36969,✅
+gap median (days),20.95,20.93,✅
+gap 75th pct (days),49.08,49.07,✅
+gap 90th pct (days),90.96,90.95,✅
+60-day prevalence min (%),50.94,50.94,✅
+60-day prevalence max (%),71.01,71.01,✅
+"nine test dates, 1 Jan - 1 Sep 2011",9 dates,"9 dates, 2011-01-01 to 2011-09-01",✅
+60-day initial fit uses Jul-Nov 2010,Jul 2010 - Nov 2010,Jul 2010 - Nov 2010,✅
+60-day retrain on 1 Feb uses Aug-Dec 2010,Aug 2010 - Dec 2010,Aug 2010 - Dec 2010,✅
+90-day initial fit uses Jun-Oct 2010,Jun 2010 - Oct 2010,Jun 2010 - Oct 2010,✅
+January predictions identical in both arms,gain = 0,0.000000,✅
+every training label complete before its test date,always,always,✅

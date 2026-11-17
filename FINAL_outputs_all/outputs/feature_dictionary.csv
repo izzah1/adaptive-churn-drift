@@ -1,0 +1,14 @@
+feature,meaning,log1p
+recency,days since the last purchase before t,False
+frequency,distinct invoices in the last 180 days,True
+monetary,gross positive spend in the last 180 days,True
+avg_order,average order value (spend / invoices),True
+units,total units bought in the last 180 days,True
+unique_products,distinct products (StockCode) in the last 180 days,True
+inv_30,invoices in the last 30 days,False
+spend_30,spend in the last 30 days,True
+inv_60,invoices in the last 60 days,False
+spend_60,spend in the last 60 days,True
+inv_change_30,invoices in last 30 days minus invoices in the 30 days before,False
+mean_gap,mean days between invoices (missing if fewer than 2 invoices),False
+gap_missing,1 if the customer has fewer than 2 invoices (mean_gap is missing),False

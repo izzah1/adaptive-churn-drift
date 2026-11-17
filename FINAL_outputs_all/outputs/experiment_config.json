@@ -1,0 +1,129 @@
+{
+  "LOOKBACK_DAYS": 180,
+  "H_PRIMARY": 60,
+  "H_SENSITIVITY": 90,
+  "FIRST_SNAPSHOT": "2010-06-01",
+  "VALIDATION_DATE": "2010-10-01",
+  "FIRST_TEST": "2011-01-01",
+  "LAST_TEST": "2011-09-01",
+  "WINDOW": 5,
+  "THRESHOLD": 0.5,
+  "N_BOOT": 1000,
+  "SEED": 42,
+  "EXPANDING_EXTENSION": false,
+  "features": [
+    "recency",
+    "frequency",
+    "monetary",
+    "avg_order",
+    "units",
+    "unique_products",
+    "inv_30",
+    "spend_30",
+    "inv_60",
+    "spend_60",
+    "inv_change_30",
+    "mean_gap",
+    "gap_missing"
+  ],
+  "log_transformed": [
+    "frequency",
+    "monetary",
+    "avg_order",
+    "units",
+    "unique_products",
+    "spend_30",
+    "spend_60"
+  ],
+  "grids": {
+    "LR": [
+      {
+        "C": 0.01
+      },
+      {
+        "C": 0.1
+      },
+      {
+        "C": 1.0
+      },
+      {
+        "C": 10.0
+      }
+    ],
+    "XGB": [
+      {
+        "max_depth": 3,
+        "n_estimators": 100,
+        "learning_rate": 0.1
+      },
+      {
+        "max_depth": 3,
+        "n_estimators": 300,
+        "learning_rate": 0.05
+      },
+      {
+        "max_depth": 3,
+        "n_estimators": 500,
+        "learning_rate": 0.03
+      },
+      {
+        "max_depth": 5,
+        "n_estimators": 100,
+        "learning_rate": 0.1
+      },
+      {
+        "max_depth": 5,
+        "n_estimators": 300,
+        "learning_rate": 0.05
+      },
+      {
+        "max_depth": 5,
+        "n_estimators": 500,
+        "learning_rate": 0.03
+      }
+    ]
+  },
+  "chosen": {
+    "60": {
+      "LR": {
+        "C": 0.1
+      },
+      "XGB": {
+        "max_depth": 3,
+        "n_estimators": 300,
+        "learning_rate": 0.05
+      }
+    },
+    "90": {
+      "LR": {
+        "C": 0.01
+      },
+      "XGB": {
+        "max_depth": 3,
+        "n_estimators": 100,
+        "learning_rate": 0.1
+      }
+    }
+  },
+  "run_date": "2026-11-17T17:40:24",
+  "package_versions": {
+    "python": "3.13.18",
+    "pandas": "2.2.3",
+    "numpy": "2.4.6",
+    "scikit-learn": "1.6.1",
+    "xgboost": "3.4.1",
+    "scipy": "1.16.3",
+    "matplotlib": "3.10.0"
+  },
+  "column_mapping": {
+    "Invoice": "InvoiceNo",
+    "Price": "UnitPrice",
+    "Customer ID": "CustomerID"
+  },
+  "preprocessing": {
+    "LR": "median imputation -> StandardScaler -> LogisticRegression, fitted on training rows only",
+    "XGB": "no scaling, NaN handled natively",
+    "class_weighting": "none (unweighted)",
+    "threshold": 0.5
+  }
+}

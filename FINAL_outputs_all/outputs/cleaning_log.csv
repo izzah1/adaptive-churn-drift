@@ -1,0 +1,8 @@
+step,rows or customers
+Raw workbook rows,1067371
+Rows with missing customer ID (excluded),243007
+Remaining identified rows,824364
+Keep non-cancelled lines with quantity and price above zero,805549
+Remove exact duplicate retained rows,779425
+Distinct customers in retained purchases,5878
+Distinct invoice identifiers in retained purchases,36969

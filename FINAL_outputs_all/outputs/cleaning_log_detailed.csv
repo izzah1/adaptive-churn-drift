@@ -1,0 +1,7 @@
+step,input_rows,removed_rows,output_rows
+"1. Read both sheets; rename Invoice -> InvoiceNo, Price -> UnitPrice, Customer ID -> CustomerID",1067371,0,1067371
+2. Drop rows with missing Customer ID,1067371,243007,824364
+"3. Drop cancellations (Invoice starts with C), Quantity <= 0, UnitPrice <= 0",824364,18815,805549
+4. Drop exact duplicate rows,805549,26124,779425
+Distinct customers kept,,,5878
+Distinct invoices kept,,,36969
